@@ -49,15 +49,6 @@ payments:
   events:
     topic:
       name: payments-events
-services:
-  events:
-    topic:
-      name: services-events
-  commands:
-    topic:
-      name: services-commands
-
-
 server:
   port: 0
 

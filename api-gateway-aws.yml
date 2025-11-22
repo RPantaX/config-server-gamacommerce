@@ -28,16 +28,6 @@ spring:
                 name: product-service
                 fallbackUri: forward:/productServiceFallback
             - AuthenticationFilter
-        - id: reservation-service
-          uri: lb://reservation-service
-          predicates:
-            - Path=/v1/reservation-service/**
-          filters:
-            - name: CircuitBreaker
-              args:
-                name: reservation-service
-                fallbackUri: forward:/reservationServiceFallback
-            - AuthenticationFilter
         - id: payment-service
           uri: lb://payment-service
           predicates:
@@ -97,8 +87,6 @@ springdoc:
         url: /v3/api-docs
       - name: product-service
         url: /aggregate/product-service/v3/api-docs
-      - name: reservation-service
-        url: /aggregate/reservation-service/v3/api-docs
       - name: payment-service
         url: /aggregate/payment-service/v3/api-docs
       - name: credit-card-processor-service
