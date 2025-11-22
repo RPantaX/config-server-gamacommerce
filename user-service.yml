@@ -33,3 +33,6 @@ management:
   endpoint:
     health:
       show-details: always
+token:
+  sunat:
+    api: sk_6846.u6J68fUYxblntyDPveU5HB5rQY2WNxdy

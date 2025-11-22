@@ -5,7 +5,7 @@ spring:
   application:
     name: user-service
   datasource:
-    url: jdbc:mysql://localhost:3308/db_users
+    url: jdbc:mysql://localhost:3308/db_users?useUnicode=true&characterEncoding=utf8mb4
     username: root
     password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -33,3 +33,6 @@ management:
   endpoint:
     health:
       show-details: always
+token:
+  sunat:
+    api: sk_6846.u6J68fUYxblntyDPveU5HB5rQY2WNxdy
