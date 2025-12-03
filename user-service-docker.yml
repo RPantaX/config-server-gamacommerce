@@ -36,3 +36,8 @@ management:
 token:
   sunat:
     api: sk_6846.u6J68fUYxblntyDPveU5HB5rQY2WNxdy
+    
+BUCKET_NAME_USUARIOS: gamacommerce-images-dev
+BUCKET_USUARIOS_CLIENT_ID: AKIA2JNK5BVLHBIYE4J2
+BUCKET_USUARIOS_SECRET_KEY: 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
+AWS_S3_REGION: us-east-1
