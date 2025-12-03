@@ -1,0 +1,89 @@
+spring:
+  application:
+    name: product-service
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  datasource:
+    url: jdbc:postgresql://postgres-products-gama:5432/db_products?useSSL=false
+    username: fazt
+    password: 123456
+  kafka:
+    bootstrap-servers: kafka-1-gama:9092,kafka-2-gama:9094,kafka-3-gama:9096
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      acks: all
+      properties:
+        delivery.timeout.ms: 120000
+        linger.ms: 0
+        request.timeout.ms: 30000
+        max.in.flight.requests.per.connection: 5
+        enable.idempotence: true
+        allow.auto.create.topics: false
+    consumer:
+      group-id: products-ms-angieBraids
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: 'com.braidsbeautybyangie.*'
+        allow.auto.create.topics: true
+    admin:
+      auto-create: false
+
+server:
+  port: 0
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery-service-gama:8761/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${random.value}
+
+# Health and monitoring
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+  metrics:
+    distribution:
+      percentiles-histogram:
+        http.server:
+          requests: true
+  tracing:
+    sampling:
+      probability: 1.0
+  prometheus:
+    metrics:
+      export:
+        enabled: true
+
+#logging:
+#  pattern:
+#    correlation: [ "${ spring.application.name: },%X{ traceId:- },%X{ spanId:- }" ]
+
+springdoc:
+  api-docs:
+    enabled: true
+    path: /api-docs
+  swagger-ui:
+    csrf:
+      enabled: true
+    path: /swagger-ui.html
+
+products:
+  commands:
+    topic:
+      name: products-commands
+  events:
+    topic:
+      name: products-events
+
+
