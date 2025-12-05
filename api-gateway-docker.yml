@@ -65,7 +65,7 @@ eureka:
       defaultZone: http://discovery-service-gama:8761/eureka
   instance:
     prefer-ip-address: true
-    instance-id: ${spring.application.name}:${spring.cloud.client.hostname}:${server.port}
+    instance-id: ${spring.application.name}:${random.value}
 
 # Health check
 management:
