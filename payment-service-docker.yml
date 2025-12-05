@@ -39,13 +39,15 @@ payments:
   events:
     topic:
       name: payments-events
-
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery-service-gama:8761/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${random.value}
 server:
   port: 0
-
-eureka:
-  instance:
-    instance-id: ${spring.application.name}:${random.value}
 
 springdoc:
   api-docs:
