@@ -10,7 +10,7 @@ spring:
     username: fazt
     password: 123456
   kafka:
-    bootstrap-servers: kafka-1-gama:9092,kafka-2-gama:9094,kafka-3-gama:9096
+    bootstrap-servers: kafka-1-gama:9090,kafka-2-gama:9090,kafka-3-gama:9090
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
