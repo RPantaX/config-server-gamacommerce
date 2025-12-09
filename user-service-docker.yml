@@ -5,9 +5,9 @@ spring:
   application:
     name: user-service
   datasource:
-    url: jdbc:mysql://mysql-users-gama/db_users
+    url: jdbc:mysql://mysql-users-gama.cazmyuk06u4q.us-east-1.rds.amazonaws.com:3308/db_users
     username: root
-    password: 123456
+    password: 12345678
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     show-sql: true
