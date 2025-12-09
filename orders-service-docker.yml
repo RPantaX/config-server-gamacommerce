@@ -6,11 +6,11 @@ spring:
       ddl-auto: update
     show-sql: true
   datasource:
-    url: jdbc:postgresql://postgres-orders-gama:5432/db_orders?useSSL=false
+    url: jdbc:postgresql://postgres-orders-gama.cazmyuk06u4q.us-east-1.rds.amazonaws.com:5432/db_orders?useSSL=false
     username: fazt3
-    password: 123456
+    password: 12345678
   kafka:
-    bootstrap-servers: kafka-1-gama:9090,kafka-2-gama:9090,kafka-3-gama:9090
+    bootstrap-servers: kafka-1-gama:9090
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
