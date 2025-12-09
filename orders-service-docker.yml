@@ -6,7 +6,7 @@ spring:
       ddl-auto: update
     show-sql: true
   datasource:
-    url: jdbc:postgresql://postgres-orders-gama.cazmyuk06u4q.us-east-1.rds.amazonaws.com:5432/db_orders?useSSL=false
+    url: jdbc:postgresql://postgres-orders-gama.cazmyuk06u4q.us-east-1.rds.amazonaws.com:5434/db_orders?useSSL=false
     username: fazt3
     password: 12345678
   kafka:
