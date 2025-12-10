@@ -17,12 +17,11 @@ spring:
 
 eureka:
   client:
-    enabled: true
     service-url:
       defaultZone: http://discovery-service-gama:8761/eureka
   instance:
-    hostname: user-service
     prefer-ip-address: true
+    instance-id: ${spring.application.name}:${random.value}
 
 
 management:
