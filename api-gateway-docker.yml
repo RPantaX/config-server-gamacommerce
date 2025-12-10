@@ -15,7 +15,7 @@ spring:
           filters:
             - StripPrefix=2
         - id: user-service
-          uri: lb://user-service
+          uri: http://user-service:8082
           predicates:
             - Path=/v1/user-service/**
         - id: product-service
