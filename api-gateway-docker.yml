@@ -19,7 +19,7 @@ spring:
           predicates:
             - Path=/v1/user-service/**
         - id: product-service
-          uri: lb://product-service
+          uri: http://product-service:8081
           predicates:
             - Path=/v1/product-service/**
           filters:
@@ -29,7 +29,7 @@ spring:
                 fallbackUri: forward:/productServiceFallback
             - AuthenticationFilter
         - id: payment-service
-          uri: lb://payment-service
+          uri: http://payment-service:8086
           predicates:
             - Path=/v1/payment-service/**
           filters:
@@ -38,7 +38,7 @@ spring:
                 name: payment-service
                 fallbackUri: forward:/paymentServiceFallback
         - id: credit-card-processor-service
-          uri: lb://credit-card-processor-service
+          uri: http://credit-card-processor-service:8084
           predicates:
             - Path=/v1/credit-card/**
           filters:
@@ -47,7 +47,7 @@ spring:
                 name: credit-card-processor-service
                 fallbackUri: forward:/creditCardProcessorServiceFallback
         - id: orders-service
-          uri: lb://orders-service
+          uri: http://orders-service:8085
           predicates:
             - Path=/v1/orders-service/**
           filters:
