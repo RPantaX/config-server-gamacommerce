@@ -5,7 +5,7 @@ spring:
   application:
     name: user-service
   datasource:
-    url: jdbc:mysql://mysql-users-gama:3308/db_users
+    url: jdbc:mysql://mysql-users-gama:3306/db_users
     username: root
     password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
