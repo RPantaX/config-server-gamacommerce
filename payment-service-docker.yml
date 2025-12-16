@@ -8,7 +8,7 @@ spring:
   datasource:
     url: jdbc:postgresql://postgres-payments-gama:5433/db_payments?useSSL=false
     username: fazt2
-    password: 12345678
+    password: 123456
   kafka:
     bootstrap-servers: kafka-1-gama:9090
     producer:
